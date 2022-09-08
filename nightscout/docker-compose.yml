@@ -77,6 +77,41 @@ services:
       # a token from every visit, using status-only will enable api-secret based login.
       AUTH_DEFAULT_ROLES: denied
 
+      SHOW_PLUGINS: iob basal sage careportal boluscalc bwp openaps cage dbsize bolus pump
+
+      BASAL_RENDER: icicle
+      SCALE_Y: log-dynamic
+      SHOW_FORECAST: openaps
+      SHOW_RAWBG: noise
+      THEME: color
+      TIME_FORMAT: 24
+      NIGHT_MODE: off
+
+      BG_HIGH: 180
+      BG_LOW: 64
+      BG_TARGET_BOTTOM: 70
+      BG_TARGET_TOP: 140
+
+      BOLUS_RENDER_FORMAT: concise
+      BOLUS_RENDER_FORMAT_SMALL: hidden
+      BOLUS_RENDER_OVER: 0.5
+
+      BRIDGE_PASSWORD: kugel4me
+      BRIDGE_SERVER: EU
+      BRIDGE_USER_NAME: mountrcg
+
+      CUSTOM_TITLE: Robs T1D data
+
+      DEVICESTATUS_ADVANCED: true
+      DISABLE: delta treatmentnotify
+      DISPLAY_UNITS: mg/dl
+
+      OPENAPS_FIELDS: status-label iob
+
+      SAGE_ENABLE_ALERTS: true
+      SAGE_INFO: 480
+      SAGE_WARN: 570
+
       # For all other settings, please refer to the Environment section of the README
       # https://github.com/nightscout/cgm-remote-monitor#environment
 
