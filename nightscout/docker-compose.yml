@@ -28,7 +28,7 @@ services:
     restart: unless-stopped
 
   nightscout:
-    image: nightscout/cgm-remote-monitor:latest
+    image: mountrcg/cgm-remote-monitor:dev
     networks:
       - caddy
     labels:
