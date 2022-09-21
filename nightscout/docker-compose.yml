@@ -28,7 +28,7 @@ services:
     restart: unless-stopped
 
   nightscout:
-    image: mountrcg/cgm-remote-monitor:dev
+    image: nightscout/cgm-remote-monitor:latest
     networks:
       - caddy
     labels:
@@ -107,6 +107,10 @@ services:
       DISPLAY_UNITS: mg/dl
 
       OPENAPS_FIELDS: status-label iob
+      OPENAPS_COLOR_PREDICTION_LINES: true
+      OPENAPS_PRED_COB_COLOR: #f5d549
+      OPENAPS_PRED_UAM_COLOR: #ff5500
+
 
       SAGE_ENABLE_ALERTS: true
       SAGE_INFO: 480
