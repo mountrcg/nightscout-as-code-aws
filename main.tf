@@ -9,10 +9,9 @@ module "vpc" {
 
   # If you changed the region above you'll need to change these availability zones (AZs)
   # to match. You can get by using the "a" and "b" availability zones without too much worry.
-  azs = ["${var.aws_region}a", "${var.aws_region}b"]
+  azs = ["${var.aws_region}a"]
 
-  private_subnets = ["10.223.1.0/24", "10.223.2.0/24"]
-  public_subnets  = ["10.223.3.0/24", "10.223.4.0/24"]
+  public_subnets  = ["10.223.3.0/24"]
 
   enable_nat_gateway = false
 }
@@ -48,7 +47,8 @@ module "nightscout" {
 
   # You can change this to any AMI of your choice. 
   # Defaults to the official Canonical Ubuntu 22.04 LTS amd64 server AMI
-  ami = data.aws_ami.ubuntu-22_04-amd64.id
+  ami           = var.alternative_ami == "" ? data.aws_ami.ubuntu-22_04-amd64.id : var.alternative_ami
+  instance_type = var.aws_ec2_instance_type
 
   # These are all the values we're going to collect to configure Nightscout
   # The need to be defined in the root module variable definitions and 
@@ -61,8 +61,8 @@ module "nightscout" {
   storage  = var.storage
 
   # Additional configuration options
-  nightscout_image = var.nightscout_image
+  nightscout_image     = var.nightscout_image
   nightscout_image_tag = var.nightscout_image_tag
-  mongo_image = var.mongo_image
-  mongo_image_tag = var.mongo_image_tag
+  mongo_image          = var.mongo_image
+  mongo_image_tag      = var.mongo_image_tag
 }
