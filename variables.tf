@@ -25,7 +25,7 @@ variable "aws_secret_key" {
   description = "Your AWS secret access key."
 }
 
-##### 
+#####
 # Additional configuration option variables
 ####
 variable "nightscout_image" {
@@ -65,7 +65,7 @@ variable "mongo_image_tag" {
 # have not been tested outside of North American regions.
 variable "aws_region" {
   type        = string
-  default     = "us-east-2"
+  default     = "eu-central-1"
   description = "The AWS region where you would like to run your Nightscout to run."
 }
 
