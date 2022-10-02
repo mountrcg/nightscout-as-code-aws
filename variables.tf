@@ -30,13 +30,13 @@ variable "aws_secret_key" {
 ####
 variable "nightscout_image" {
   type        = string
-  default     = "nightscout/cgm-remote-monitor"
+  default     = "mountrcg/cgm-remote-monitor"
   description = "The Docker image used for Nightscout. Offers the opportunity to customize which image is being run. Defaults to the official Nightscout image."
 }
 
 variable "nightscout_image_tag" {
   type        = string
-  default     = "latest"
+  default     = "dev"
   description = "The tag used to specify which image version of nightscout is being run. Defaults to latest."
 }
 
